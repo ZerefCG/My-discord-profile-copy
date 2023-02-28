@@ -1,0 +1,262 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*=============== VARIABLES ===============*/
+
+:root{
+    --color-primary:#232428; /*color for background of card*/
+    --color-secondary:#111214; /*color for description section of card*/
+    --color-titles:#f3f4f5; /*color for titles on description section of card*/
+    --color-links:#0483c0; /*color for links on description section of card*/
+    --color-smallfonts:#e8e9ea; /*smallfonts for fonts after titles*/
+    --color-frontpage:#1e1310; /*front page of profile before info*/
+    --body-background:#1e2124;/*background for body*/
+    --id-background:#b4b5bb; /*color for borders 1px and ID on nickname*/
+    --borders-color:rgba(180, 181, 187,0.2);
+}
+
+
+/* CUSTOM PROPERTIES */
+
+html{
+    font-size: 62.5%; /*1rem=10px*/
+}
+
+img{
+    max-width: 100%;
+    vertical-align: top;
+    
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #dfdfdf;
+    
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+
+
+/*=============== CONTAINER CENTER STYLES ===============*/
+
+.container-card{
+    width: 90%;
+    max-width: 65rem;
+    margin: 0 auto;
+    padding:1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+/* STYLES OF BORDER RADIUS FOR ALL */
+
+.container-card{
+    border-radius: 5px;
+}
+
+
+/*=============== PROFILE STYLES GENERAL ===============*/
+
+/* FRONT PAGE PROFILE STYLES, POSITION ABSOLUTE AND Z INDEX FOR IMAGE PROFILE FIRST */
+.front-page{
+    background-color: var(--color-frontpage);
+    width: 100%;
+    height: 11rem;
+    padding-top: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;  
+}
+
+/* front page icon styles (edit profile pecil) */
+.front-page__icon{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    padding: 1rem;
+    font-size:1.6rem;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    
+}
+
+.front-page__icon:hover{
+    transition: 0.2s all;
+    background-color: black;
+}
+
+/* a padding for a bit space for top */
+.profile{
+    padding-top: 2rem;
+}
+
+/* profile image relative with for image see image first because front-page hidden the image  */
+/* IMAGE PROFILE STYLES */
+.profile-info__figure{
+     position: relative;
+     width: 15rem;
+}
+/* position relative to figure for contain and move status circle */
+.profile-info__img{  
+    border-radius: 50%;
+    border: 1rem solid var(--color-primary);
+  
+}
+
+/* STATUS ON DISCORD STYLES */
+.profile-info__status{
+    width: 3.6rem;
+    height: 3.6rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+    border: 0.7rem solid #131416;
+    border-radius: 50%;
+}
+
+/*=============== PROFILE DESCRIPTION STYLES ===============*/
+
+
+.profile-description{
+    background-color: var(--color-secondary);
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+/* profile description title styles */
+
+.profile-description__nick{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 0rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+   
+}
+
+
+/* BORDERS FOR NICKNAME AND AFTER TEXT AREA SECTION, SOCIALS TOO NEED A BORDER */
+.profile-description__nick, .profile-about{
+     border-bottom: 1px solid var(--borders-color); 
+}
+
+
+.profile-description__ID{
+    color:var(--id-background) ;
+    
+}
+
+/* profile description sub-titles and text  styles */
+
+.profile-about__sub-title{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--color-titles);
+}
+
+.profile-about__text{
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-smallfonts);
+}
+
+.profile-about__link{
+    color:var(--color-links) ;
+}
+
+.profile-about__link:hover{
+    text-decoration: underline;
+}
+
+/* =====TEXT AREA STYLES===== */
+
+.profile-about__text-area{
+    width: 100%;
+    margin-bottom: 1.5rem; /*oh yeah i repeat the same thing 3 times LMAO*/
+    max-width: 100%;
+    max-height: 5rem;
+    font-size: 1.3rem;
+    resize: none;
+    background-color:var(--body-background) ;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    color: var(--color-smallfonts);
+}
+
+.profile-about__text-area::placeholder{
+    color: rgba(232, 233, 234, 0.8);
+    font-size: 1.3rem; 
+}
+
+/*=============== SOCIAL LINKED TO DISCORD STYLES ===============*/
+
+.profile-socials{
+    display: flex;
+    gap: 1rem;
+
+}
+/* profile socials network styles */
+.profile-socials__network{
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 50%;
+    border: 1px solid var(--borders-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: 0.2s all;
+    color: var(--color-smallfonts);
+}
+
+/* HOVER EFFECT */
+.profile-socials__network:hover{
+    background-color: var(--color-primary);
+}
+
+
+.fa-github, 
+.fa-steam{
+    font-size: 2.2rem;
+    margin-right: 0.5rem;
+   
+}
+
+.profile-socials__verified{
+    width: 16px;
+    height: 16px;
+}
+
+/* =====MEDIA QUERIES=== */
+
+@media screen and (max-width:360px){
+    .profile-socials{
+        flex-direction: column;
+    }
+    
+    .profile-socials__network{
+        width: 100%;
+    }
+
+    .profile-socials__network:nth-child(2){
+        margin-top: 0;
+    }
+}
