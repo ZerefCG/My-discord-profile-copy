@@ -64,7 +64,10 @@ a{
 
 /* STYLES OF BORDER RADIUS FOR ALL */
 
-.container-card{
+.container-card,
+.profile-description,
+.profile-about__text-area,
+.profile-socials__network{
     border-radius: 5px;
 }
 
